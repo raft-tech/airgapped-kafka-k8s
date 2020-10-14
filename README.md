@@ -19,7 +19,7 @@
 
     # Start local registry and import images
     docker-compose up -d
-    [export REGISTRY=<your-custom-registry> && ] sh ./import_images.sh
+    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/import_images.sh
 
     # Install Kafka Operator (swap out localhost:5000 with your custom name if you're using one)
     helm repo add strimzi https://strimzi.io/charts/
@@ -35,7 +35,7 @@
     # or your custom registry name
 
     # Rook test
-    [export REGISTRY=<your-custom-registry> && ] sh ./rook_local.sh
+    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/rook_local.sh
     kubectl get pods -n rook-cassandra-system
     # If jq not installed, either "brew install jq" or remove "| jq" from below
     kubectl get pod -n rook-cassandra-system $(kubectl get pods -n rook-cassandra-system --no-headers -o custom-columns=":metadata.name") -o jsonpath='{$.spec.containers[*].env[3:]}' | jq

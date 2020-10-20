@@ -33,7 +33,7 @@
     helm install --name airgapped-kafka --set imageRepositoryOverride="localhost:5000/strimzi" --create-namespace -n operators strimzi/strimzi-kafka-operator
 
     # Check install
-    helm ls
+    helm ls -n operators
     kubectl get deploys -n operators
     kubectl get pods -n operators
     # If jq not installed, either "brew install jq" or remove "| jq" from below
@@ -59,11 +59,13 @@
     helm install incubator/sparkoperator --generate-name --namespace operators --set sparkJobNamespace=default
 
     # Check install
-    helm ls
+    helm ls -n operators
     kubectl get deploys -n operators
     kubectl get pods -n operators
     # If jq not installed, either "brew install jq" or remove "| jq" from below
     kubectl get pod -n operators $(kubectl get pods -n operators --no-headers -o custom-columns=":metadata.name") -o jsonpath='{$.spec.containers[*].env[3:]}' | jq
     # Confirm output has image values prepended with "localhost:5000/" 
     # or your custom registry name
+    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/spark_local.sh
+    kubectl get sparkapplications spark-pi -o=yaml
     ```

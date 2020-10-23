@@ -10,6 +10,7 @@ declare -a images=(
                   "strimzi/operator:0.19.0"
                   "strimzi/kafka-bridge:0.18.0"
                   "strimzi/jmxtrans:0.19.0"
+                  "tchiotludo/akhq:latest"
                   "apache/nifi:1.12.1"
                   "rook/cassandra:v1.4.5"
                   "gcr.io/spark-operator/spark-operator:v1beta2-1.2.1-3.0.0"

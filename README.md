@@ -6,6 +6,7 @@
 - strimzi/operator:0.19.0
 - strimzi/kafka-bridge:0.18.0
 - strimzi/jmxtrans:0.19.0
+- tchiotludo/akhq:latest
 ### NiFi
 - apache/nifi:1.12.1
 ### Rook
@@ -28,13 +29,12 @@
     [export REGISTRY=<your-custom-registry> && ] sh ./scripts/import_images.sh
 
     # Kafka test
-    # Install Kafka Operator (swap out localhost:5000 with your custom name if you're using one)
-    helm repo add strimzi https://strimzi.io/charts/
-    helm install --name airgapped-kafka --set imageRepositoryOverride="localhost:5000/strimzi" --create-namespace -n operators strimzi/strimzi-kafka-operator
+    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/kafka_local.sh
 
     # Check install
+    kubectl get deployments
     helm ls -n operators
-    kubectl get deploys -n operators
+    kubectl get deployments -n operators
     kubectl get pods -n operators
     # If jq not installed, either "brew install jq" or remove "| jq" from below
     kubectl get pod -n operators $(kubectl get pods -n operators --no-headers -o custom-columns=":metadata.name") -o jsonpath='{$.spec.containers[*].env[3:]}' | jq
@@ -42,8 +42,8 @@
     # or your custom registry name
 
     # NiFi test
-    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/nfi_local.sh
-    kubectl get pods -n nifi
+    #[export REGISTRY=<your-custom-registry> && ] sh ./scripts/nfi_local.sh
+    #kubectl get pods -n nifi
 
     # Rook test
     [export REGISTRY=<your-custom-registry> && ] sh ./scripts/rook_local.sh
@@ -60,7 +60,7 @@
 
     # Check install
     helm ls -n operators
-    kubectl get deploys -n operators
+    kubectl get deployments -n operators
     kubectl get pods -n operators
     # If jq not installed, either "brew install jq" or remove "| jq" from below
     kubectl get pod -n operators $(kubectl get pods -n operators --no-headers -o custom-columns=":metadata.name") -o jsonpath='{$.spec.containers[*].env[3:]}' | jq

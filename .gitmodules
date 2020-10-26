@@ -4,3 +4,9 @@
 [submodule "spark-on-k8s-operator"]
 	path = spark-on-k8s-operator
 	url = https://github.com/GoogleCloudPlatform/spark-on-k8s-operator.git
+[submodule "strimzi-kafka-operator"]
+	path = strimzi-kafka-operator
+	url = https://github.com/strimzi/strimzi-kafka-operator.git
+[submodule "akhq"]
+	path = akhq
+	url = https://github.com/tchiotludo/akhq.git

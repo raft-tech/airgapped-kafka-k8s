@@ -1,21 +1,13 @@
 # airgapped-kafka-k8s
 
-## Images on Docker Hub
-### Kafka
-- strimzi/kafka:0.19.0-kafka-2.5.0
-- strimzi/operator:0.19.0
-- strimzi/kafka-bridge:0.18.0
-- strimzi/jmxtrans:0.19.0
-- tchiotludo/akhq:latest
-### NiFi
-- apache/nifi:1.12.1
-### Rook
-- rook/cassandra:v1.4.5
-### Spark
-- gcr.io/spark-operator/spark-operator:v1beta2-1.2.1-3.0.0
-- gcr.io/spark-operator/spark:v3.0.0
+## Services Covered - ([Manifest of images](https://github.com/raft-tech/airgapped-kafka-k8s/docs/images.md))
+- Apache Cassandra
+- Apache Kafka
+- Apache NiFi
+- Apache Spark
+- Dask (Python Parallel Computing)
 
-## Test steps
+## Test steps (WIP)
 1. Start Docker for Desktop w/ k8s support enabled
 2. Perform the following shell commands:
     ``` zsh

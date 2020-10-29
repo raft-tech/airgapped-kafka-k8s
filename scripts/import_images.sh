@@ -5,7 +5,14 @@
 
 [ -z "$REGISTRY" ] && REGISTRY=localhost:5000
 
+CP_VERSION=5.5.2
+
 declare -a images=(
+                  "confluentinc/cp-zookeeper:${CP_VERSION}"
+                  "confluentinc/cp-kafka:${CP_VERSION}"
+                  "confluentinc/cp-schema-registry:${CP_VERSION}"
+                  "confluentinc/cp-ksqldb-server:${CP_VERSION}"
+                  "confluentinc/cp-ksqldb-cli:${CP_VERSION}"
                   "strimzi/kafka:0.19.0-kafka-2.5.0"
                   "strimzi/operator:0.19.0"
                   "strimzi/kafka-bridge:0.18.0"

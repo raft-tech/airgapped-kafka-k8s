@@ -18,8 +18,13 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + C* c
 | [Kafka](#kafka)         | Confluent Zookeeper                       | `confluentinc/cp-zookeeper:5.5.2`                          | 5.5.2   | Commercial           | https://github.com/confluentinc/cp-docker-images/tree/5.3.3-post/debian/zookeeper       | Yes             | Yes          |
 |                         | Confluent Kafka                           | `confluentinc/cp-kafka:5.5.2`                              | 5.5.2   | Commercial           | https://github.com/confluentinc/cp-docker-images/tree/5.3.3-post/debian/kafka           | Yes             | Yes          |
 |                         | Confluent Schema Registry                 | `confluentinc/cp-schema-registry:5.5.2`                    | 5.5.2   | Commercial           | https://github.com/confluentinc/cp-docker-images/tree/5.3.3-post/debian/schema-registry | Yes             | Yes          |
-|                         | Confluent KSQLdb Server                   | `confluentinc/cp-ksqldb-server:5.5.2`                      | 5.5.2   | Commercial           |                                                                                         | Yes             | Yes          |
-|                         | Confluent KSQLdb CLI                      | `confluentinc/cp-ksqldb-cli:5.5.2`                         | 5.5.2   | Commercial           |                                                                                         | Yes             | Yes          |
+|                         | Confluent ksqlDB Server                   | `confluentinc/cp-ksqldb-server:5.5.2`                      | 5.5.2   | Commercial           |                                                                                         | Yes             | Yes          |
+|                         | Confluent ksqlDB CLI                      | `confluentinc/cp-ksqldb-cli:5.5.2`                         | 5.5.2   | Commercial           |                                                                                         | Yes             | Yes          |
+|                         | Confluent k8s Operator Init               | `confluentinc/cp-init-container-operator:5.5.2.0`          | 5.5.2.0 | Commercial           |                                                                                         | Yes             | No           |
+|                         | Confluent k8s Operator Service            | `confluentinc/cp-operator-service:0.419.0`                 | 0.419.0 | Commercial           |                                                                                         | Yes             | No           |
+|                         | Confluent k8s Operator - ksqlDB Server    | `confluentinc/cp-ksqldb-server-operator:5.5.2.0`           | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
+|                         | Confluent k8s Operator - Schema Registry  | `confluentinc/cp-schema-registry-operator:5.5.2.0`         | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
+|                         | Confluent k8s Operator - Zookeeper        | `confluentinc/cp-zookeeper-operator:5.5.2.0`               | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
 |                         | Apache Kafka core; Zookeeper              | `strimzi/kafka:0.19.0-kafka-2.5.0`                         | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | Yes             | No           |
 |                         | Kafka Operator                            | `strimzi/operator:0.19.0`                                  | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | Yes             | No           |
 |                         | Kafka Bridge                              | `strimzi/kafka-bridge:0.18.0`                              | 0.18.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | Yes             | No           |
@@ -75,7 +80,12 @@ JupyterHub is licensed under the [BSD 3-Clause License](https://github.com/jupyt
     docker-compose up -d
     [export REGISTRY=<your-custom-registry> && ] sh ./scripts/import_images.sh
 
-    # Kafka test
+    ## Kafka test
+
+    # Confluent Platform Kafka
+    # TODO: uses a set of operators from Confluent
+
+    # Apache Kafka (FOSS distro)
     [export REGISTRY=<your-custom-registry> && ] sh ./scripts/kafka_local.sh
 
     # Check install

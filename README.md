@@ -5,8 +5,8 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + C* c
 
 ## Services Covered
 - **Confluent Platform**
-- **Apache Kafka**
 - **Apache Cassandra**
+- Apache Kafka
 - Apache NiFi
 - Apache Spark
 - Dask (Python Parallel Computing)
@@ -25,12 +25,12 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + C* c
 |                         | Confluent k8s Operator - ksqlDB Server    | `confluentinc/cp-ksqldb-server-operator:5.5.2.0`           | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
 |                         | Confluent k8s Operator - Schema Registry  | `confluentinc/cp-schema-registry-operator:5.5.2.0`         | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
 |                         | Confluent k8s Operator - Zookeeper        | `confluentinc/cp-zookeeper-operator:5.5.2.0`               | 5.5.2   | Commercial           |                                                                                         | Yes             | No           |
-|Strimzi                  | Apache Kafka core; Zookeeper              | `strimzi/kafka:0.19.0-kafka-2.5.0`                         | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | No              | No           |
+| Strimzi                 | Apache Kafka core; Zookeeper              | `strimzi/kafka:0.19.0-kafka-2.5.0`                         | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | No              | No           |
 |                         | Kafka Operator                            | `strimzi/operator:0.19.0`                                  | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | No              | No           |
 |                         | Kafka Bridge                              | `strimzi/kafka-bridge:0.18.0`                              | 0.18.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | No              | No           |
 |                         | JMX interface                             | `strimzi/jmxtrans:0.19.0`                                  | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       | No              | No           |
-|akhq                     | Kafka Dashboard                           | `tchiotludo/akhq:latest`                                   | latest  | Apache License 2.0   | https://github.com/tchiotludo/akhq                                                      | No              | No           |
-| [Cassandra](#cassandra) | Rook Cassandra Operator                   | `rook/cassandra:v1.4.5`                                    | 1.4.5   | Apache License 2.0   | https://github.com/rook/rook                                                            | No              | No           |
+| Apache Kafka HQ         | Kafka Dashboard                           | `tchiotludo/akhq:latest`                                   | latest  | Apache License 2.0   | https://github.com/tchiotludo/akhq                                                      | No              | No           |
+| [Cassandra](#cassandra) | Rook Cassandra Operator                   | `rook/cassandra:v1.4.5`                                    | 1.4.5   | Apache License 2.0   | https://github.com/rook/rook                                                            | Yes             | No           |
 | [Spark](#spark)         | Spark Operator                            | `gcr.io/spark-operator/spark-operator:v1beta2-1.2.1-3.0.0` | v1beta2 | Apache License 2.0   | https://github.com/GoogleCloudPlatform/spark-on-k8s-operator                            | No              | No           |
 |                         | Apache Spark core                         | `gcr.io/spark-operator/spark:v3.0.0`                       | 3.0.0   | Apache License 2.0   | https://github.com/GoogleCloudPlatform/spark-on-k8s-operator                            | No              | No           |
 | [NiFi](#nifi)           | Apache NiFi                               | `apache/nifi:1.12.1`                                       | 1.12.1  | Apache License 2.0   | https://github.com/apache/nifi                                                          | No              | No           |

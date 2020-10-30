@@ -13,6 +13,7 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + Cass
 - Dask (Python Parallel Computing)
 
 ## Image Manifest
+An expanded manifest with alternate versions also [available](docs/image_manifests.md).
 
 | Service                             | Component                                 | Needed for MVP? | In IronBank? | Image                                                      | Version | License              | URL                                                                                     |
 |-------------------------------------|-------------------------------------------|-----------------|--------------|------------------------------------------------------------|---------|----------------------|-----------------------------------------------------------------------------------------|
@@ -21,11 +22,12 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + Cass
 |                                     | Confluent Schema Registry                 | Yes             | Yes          | `confluentinc/cp-schema-registry:5.5.2`                    | 5.5.2   | Commercial           | https://github.com/confluentinc/cp-docker-images/tree/5.3.3-post/debian/schema-registry |
 |                                     | Confluent ksqlDB Server                   | Yes             | Yes          | `confluentinc/cp-ksqldb-server:5.5.2`                      | 5.5.2   | Commercial           |                                                                                         |
 |                                     | Confluent ksqlDB CLI                      | Yes             | Yes          | `confluentinc/cp-ksqldb-cli:5.5.2`                         | 5.5.2   | Commercial           |                                                                                         |
-|                                     | Confluent k8s Operator Init               | Yes             | No           | `confluentinc/cp-init-container-operator:5.5.2.0`          | 5.5.2.0 | Commercial           |                                                                                         |
 |                                     | Confluent k8s Operator Service            | Yes             | No           | `confluentinc/cp-operator-service:0.419.0`                 | 0.419.0 | Commercial           |                                                                                         |
-|                                     | Confluent k8s Operator - ksqlDB Server    | Yes             | No           | `confluentinc/cp-ksqldb-server-operator:5.5.2.0`           | 5.5.2   | Commercial           |                                                                                         |
-|                                     | Confluent k8s Operator - Schema Registry  | Yes             | No           | `confluentinc/cp-schema-registry-operator:5.5.2.0`         | 5.5.2   | Commercial           |                                                                                         |
-|                                     | Confluent k8s Operator - Zookeeper        | Yes             | No           | `confluentinc/cp-zookeeper-operator:5.5.2.0`               | 5.5.2   | Commercial           |                                                                                         |
+|                                     | Confluent k8s Operator Init               | Yes             | No           | `confluentinc/cp-init-container-operator:5.5.2.0`          | 5.5.2.0 | Commercial           |                                                                                         |
+|                                     | Confluent k8s Operator - Kafka            | Yes             | No           | `confluentinc/cp-server-operator:5.5.2.0`                  | 5.5.2.0 | Commercial           |                                                                                         |
+|                                     | Confluent k8s Operator - ksqlDB Server    | Yes             | No           | `confluentinc/cp-ksqldb-server-operator:5.5.2.0`           | 5.5.2.0 | Commercial           |                                                                                         |
+|                                     | Confluent k8s Operator - Schema Registry  | Yes             | No           | `confluentinc/cp-schema-registry-operator:5.5.2.0`         | 5.5.2.0 | Commercial           |                                                                                         |
+|                                     | Confluent k8s Operator - Zookeeper        | Yes             | No           | `confluentinc/cp-zookeeper-operator:5.5.2.0`               | 5.5.2.0 | Commercial           |                                                                                         |
 | [Cassandra](#cassandra)             | Rook Cassandra Operator                   | Yes             | No           | `rook/cassandra:v1.4.5`                                    | 1.4.5   | Apache License 2.0   | https://github.com/rook/rook                                                            |
 | [Apache Kafka](#apache-kafka)       | Apache Kafka core; Zookeeper              | No              | No           | `strimzi/kafka:0.19.0-kafka-2.5.0`                         | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
 |                                     | Kafka Operator                            | No              | No           | `strimzi/operator:0.19.0`                                  | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
@@ -84,7 +86,7 @@ JupyterHub is licensed under the [BSD 3-Clause License](https://github.com/jupyt
 
     # Start local registry and import images
     docker-compose up -d
-    [export REGISTRY=<your-custom-registry> && ] sh ./scripts/import_images.sh
+    [export REGISTRY=<your-custom-registry> && export CP_VERSION=6.0.0 && export CP_OPERATOR_VERSION=6.0.0.0 &&] sh ./scripts/import_images.sh
 
     ## Kafka test
 

@@ -5,8 +5,9 @@
 
 [ -z "$REGISTRY" ] && REGISTRY=localhost:5000
 
-CP_VERSION=5.5.2
-CP_OPERATOR_SERVICE=0.419.0
+[ -z "$CP_VERSION" ] && CP_VERSION=5.5.2
+[ -z "$CP_OPERATOR_VERSION" ] && CP_OPERATOR_VERSION=5.5.2.0
+[ -z "$CP_OPERATOR_SERVICE" ] && CP_OPERATOR_SERVICE=0.419.0
 
 declare -a images=(
                   "confluentinc/cp-zookeeper:${CP_VERSION}"
@@ -14,11 +15,12 @@ declare -a images=(
                   "confluentinc/cp-schema-registry:${CP_VERSION}"
                   "confluentinc/cp-ksqldb-server:${CP_VERSION}"
                   "confluentinc/cp-ksqldb-cli:${CP_VERSION}"
-                  "confluentinc/cp-init-container-operator:${CP_VERSION}.0"
                   "confluentinc/cp-operator-service:${CP_OPERATOR_SERVICE}"
-                  "confluentinc/cp-ksqldb-server-operator:${CP_VERSION}.0"
-                  "confluentinc/cp-schema-registry-operator:${CP_VERSION}.0"
-                  "confluentinc/cp-zookeeper-operator:${CP_VERSION}.0"
+                  "confluentinc/cp-init-container-operator:${CP_OPERATOR_VERSION}"
+                  "confluentinc/cp-server-operator:${CP_OPERATOR_VERSION}"
+                  "confluentinc/cp-ksqldb-server-operator:${CP_OPERATOR_VERSION}"
+                  "confluentinc/cp-schema-registry-operator:${CP_OPERATOR_VERSION}"
+                  "confluentinc/cp-zookeeper-operator:${CP_OPERATOR_VERSION}"
                   "strimzi/kafka:0.19.0-kafka-2.5.0"
                   "strimzi/operator:0.19.0"
                   "strimzi/kafka-bridge:0.18.0"

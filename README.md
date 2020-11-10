@@ -6,8 +6,8 @@ This repo tracks details for images necessary to run a proposed MVP Kafka + Cass
 ## Services Covered
   (MVP services in bold)
 - **Apache Cassandra**
-- **Apache Kafka**
 - **Confluent Platform**
+- Apache Kafka
 - Apache NiFi
 - Apache Spark
 - Dask (Python Parallel Computing)
@@ -32,11 +32,11 @@ An expanded manifest with alternate versions also [available](docs/image_manifes
 |                                     | Confluent k8s Operator - Control Center   | Yes             | No           | `confluentinc/cp-enterprise-control-center-operator:5.5.2.0` | 5.5.2.0 | Commercial           |                                                                                         |
 |                                     | Confluent k8s Operator - Zookeeper        | Yes             | No           | `confluentinc/cp-zookeeper-operator:5.5.2.0`                 | 5.5.2.0 | Commercial           |                                                                                         |
 | [Cassandra](#cassandra)             | Rook Cassandra Operator                   | Yes             | No           | `rook/cassandra:v1.4.5`                                      | 1.4.5   | Apache License 2.0   | https://github.com/rook/rook                                                            |
-| [Apache Kafka](#apache-kafka)       | Apache Kafka core; Zookeeper              | Yes             | No           | `strimzi/kafka:0.19.0-kafka-2.5.0`                           | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
-|                                     | Kafka Operator                            | Yes             | No           | `strimzi/operator:0.19.0`                                    | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
-|                                     | Kafka Bridge                              | Yes             | No           | `strimzi/kafka-bridge:0.18.0`                                | 0.18.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
-|                                     | JMX interface                             | Yes             | No           | `strimzi/jmxtrans:0.19.0`                                    | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
-| [KafkaHQ](#kafkahq)                 | Kafka Dashboard                           | Yes             | No           | `tchiotludo/akhq:latest`                                     | latest  | Apache License 2.0   | https://github.com/tchiotludo/akhq                                                      |
+| [Apache Kafka](#apache-kafka)       | Apache Kafka core; Zookeeper              | No              | No           | `strimzi/kafka:0.19.0-kafka-2.5.0`                           | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
+|                                     | Kafka Operator                            | No              | No           | `strimzi/operator:0.19.0`                                    | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
+|                                     | Kafka Bridge                              | No              | No           | `strimzi/kafka-bridge:0.18.0`                                | 0.18.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
+|                                     | JMX interface                             | No              | No           | `strimzi/jmxtrans:0.19.0`                                    | 0.19.0  | Apache License 2.0   | https://github.com/strimzi/strimzi-kafka-operator                                       |
+| [KafkaHQ](#kafkahq)                 | Kafka Dashboard                           | No              | No           | `tchiotludo/akhq:latest`                                     | latest  | Apache License 2.0   | https://github.com/tchiotludo/akhq                                                      |
 | [Spark](#spark)                     | Spark Operator                            | No              | No           | `gcr.io/spark-operator/spark-operator:v1beta2-1.2.1-3.0.0`   | v1beta2 | Apache License 2.0   | https://github.com/GoogleCloudPlatform/spark-on-k8s-operator                            |
 |                                     | Apache Spark core                         | No              | No           | `gcr.io/spark-operator/spark:v3.0.0`                         | 3.0.0   | Apache License 2.0   | https://github.com/GoogleCloudPlatform/spark-on-k8s-operator                            |
 | [NiFi](#nifi)                       | Apache NiFi                               | No              | No           | `apache/nifi:1.12.1`                                         | 1.12.1  | Apache License 2.0   | https://github.com/apache/nifi                                                          |
